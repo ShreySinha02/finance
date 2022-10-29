@@ -1,0 +1,19 @@
+.side-items{
+    color: rgb(103, 97, 97);
+    font-size: x-small;
+    margin-bottom: 1.5em;
+}
+.active{
+    color: #fff;
+}
+.active-icon{
+    color: crimson !important;
+}
+.side-items p {
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.side-items p:hover{
+    color: aliceblue;
+}

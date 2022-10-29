@@ -1,24 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
 
+import './App.css';
+import { ChakraProvider } from '@chakra-ui/react'
+import { Grid, GridItem,Center } from '@chakra-ui/react'
+import Dashboard from './Component/Dashboard'
+import Search from './Component/Search'
+import Main from './Component/Main'
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ChakraProvider>
+   
+   <Grid
+  templateAreas={`"nav header"
+                  "nav main"
+                  "nav main"`}
+  gridTemplateRows={'85px 1fr 30px'}
+  gridTemplateColumns={'250px 1fr'}
+  h='100vh'
+  // gap='0.5'
+>
+  <GridItem pl='2' bg='#e9eff2' area={'header'}>
+   <Search/>
+  </GridItem>
+  <GridItem pl='2' bg='#e9eff2' area={'nav'} padding='10px'>
+    <Center>
+   <Dashboard/>
+    </Center>
+  </GridItem>
+  <GridItem pl='2' bg='#e9eff2' area={'main'}>
+    <Main/>
+  </GridItem>
+</Grid>
+    </ChakraProvider>
   );
 }
 
